@@ -13,34 +13,50 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+//import { Text } from 'react-native';
+
+import {
+
+  Text,
+} from 'react-native';
 //test change in develop
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+    <SafeAreaProvider style = {styles.safeView}>
+ <View style ={styles.view}>
+      <Text style ={styles.titleText}>Travel App </Text>
     </View>
+    
+    </SafeAreaProvider>
+   
   );
 }
+   
+
 
 const styles = StyleSheet.create({
-  container: {
+  safeView: {
     flex: 1,
+    backgroundColor: 'red',
+  },
+  view: {
+    flex: 1,
+
+    backgroundColor: 'yellow',
+   
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  titleText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'black',
+    padding: 10,
+
   },
 });
 
