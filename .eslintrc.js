@@ -26,17 +26,17 @@ module.exports = {
       'version': 'detect',
     },
 
-    
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+
+  'editor.codeActionsOnSave': {
+    'source.fixAll.eslint': true
   },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
+  'eslint.validate': [
+    'javascript',
+    'javascriptreact',
+    'typescript',
+    'typescriptreact'
   ],
-  "eslint.run": "onSave"
+  'eslint.run': 'onSave'
 
   },
   'rules': {
@@ -268,5 +268,5 @@ module.exports = {
       'never'
     ],
   }
- 
+
 };
