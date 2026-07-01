@@ -1,44 +1,27 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import Title from '../Title/index.js';
+import { Title } from '../../components/Title/index.js';
+import { styles } from './style.js';
+import Categories from '../../components/Categories/index.js';
+
 const HomeScreen = () => {
 
    return (
-     <SafeAreaProvider style = {styles.safeView}>
-  <View style ={styles.view}>
-     <Title/>
+     <SafeAreaProvider style = {styles.mainContainer}>
+  <View style ={styles.container}>
+
+      <Title text = 'Where do' style = { { fontWeight: 'normal' }} />
+      <Title text = 'you want to go?'/>
+      <Title text = 'Explore Attractions ' style={styles.subtitle}/>
+      <Categories categories = {['all', 'popular', 'historical']}/>
+
      </View>
 
      </SafeAreaProvider>
 
    );
  };
-
-
- const styles = StyleSheet.create({
-   safeView: {
-     flex: 1,
-     backgroundColor: 'red',
-   },
-   view: {
-     flex: 1,
-
-     backgroundColor: 'yellow',
-
-   },
-   text: {
-     fontSize: 20,
-     fontWeight: 'bold',
-   },
-   titleText: {
-     fontSize: 24,
-     fontWeight: 'bold',
-     color: 'black',
-     padding: 10,
-
-   },
- });
 
  export default HomeScreen;
 

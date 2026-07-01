@@ -1,0 +1,15 @@
+import { StyleSheet } from 'react-native';
+
+const titleStyles = StyleSheet.create({
+  title: {  fontSize: 32,
+    fontWeight: 'bold',
+    color: '#4681A3', },
+
+blackTitle: {
+color: 'black',
+fontSize: 12
+},
+
+ });
+
+  export default titleStyles;
