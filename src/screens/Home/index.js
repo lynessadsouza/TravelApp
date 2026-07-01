@@ -14,7 +14,7 @@ const HomeScreen = () => {
       <Title text = 'Where do' style = { { fontWeight: 'normal' }} />
       <Title text = 'you want to go?'/>
       <Title text = 'Explore Attractions ' style={styles.subtitle}/>
-      <Categories categories = {['all', 'popular', 'historical']}/>
+      <Categories categories = {['All', 'Popular', 'Historical']}/>
 
      </View>
 
