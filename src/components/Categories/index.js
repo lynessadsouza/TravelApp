@@ -1,17 +1,36 @@
 import React from 'react';
-import { FlatList, Text } from 'react-native';
+import { FlatList, Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles.js';
 
-const Categories = ({ categories , selectedCategory }) => {
-    return (
-        <FlatList
-        horizontal = {true}
-            data={categories}
-            renderItem={({ item }) => (
-                <Text style = {[styles.item , selectedCategory === item ? styles.selectedItem : {}]}>{item}</Text>
-            )}
-        />
-    );
+const Categories = ({ categories, selectedCategory, onCategoryPress }) => {
+  return (
+    <FlatList
+      horizontal={true}
+      data={categories}
+      //keyExtractor={(item) => item}
+      renderItem={({ item }) => {
+        const selected = selectedCategory === item;
+
+        return (
+          <TouchableOpacity onPress ={ () =>   onCategoryPress(item) }
+            style={[
+              styles.itemContainer,
+              selected ? styles.selectedItemContainer : { },
+            ]}
+          >
+            <Text
+              style={[
+                styles.item,
+                selected ? styles.selectedText : null,
+              ]}
+            >
+              {item}
+            </Text>
+          </TouchableOpacity>
+        );
+      }}
+    />
+  );
 };
 
 export default React.memo(Categories);
